@@ -1,20 +1,21 @@
 package org.example;
 
 public class Toy {
-    private static int id;
+    private String id;
     private String name;
     private int count;
     private int weightfactor = 50;
 
-    Toy(String name, int weightfactor){
-        this.id = ++id;
+    Toy(String id, String name, String weightfactor){
+        this.id = id;
         this.name = name;
         setWeightfactor(weightfactor);
     }
 
-    public void setWeightfactor(int weightfactor) {
-        if (weightfactor > 0 && weightfactor < 100){
-            this.weightfactor = weightfactor;
+    public void setWeightfactor(String weightfactor) {
+       int number = Integer.parseInt(weightfactor);
+        if (number > 0 && number < 100){
+            this.weightfactor = number;
         }
     }
 

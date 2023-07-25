@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 
 public class Main {
 
@@ -9,7 +8,7 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             run.put();
         }
-//        run.get();
+        run.get();
 //        run.save();
 
 

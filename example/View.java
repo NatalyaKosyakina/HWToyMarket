@@ -7,4 +7,5 @@ public interface View {
 
     public void get();
 
+    public void show();
 }

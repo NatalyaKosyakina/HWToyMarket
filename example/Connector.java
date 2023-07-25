@@ -12,4 +12,7 @@ public class Connector {
         model.putInStorage(model.writeAToy(view.put()));
     }
 
+    public void get(){
+        view.show(model.getRandom());
+    }
 }

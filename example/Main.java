@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        Connector run = new Connector(new ConsoleView(), new Model);
+        Connector run = new Connector(new ConsoleView(), new Model());
         for (int i = 0; i < 3; i++) {
             run.put();
         }

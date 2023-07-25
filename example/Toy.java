@@ -3,8 +3,8 @@ package org.example;
 public class Toy {
     private String id;
     private String name;
-    private int count;
-    private int weightfactor = 50;
+
+    private int weightfactor = 1;
 
     Toy(String id, String name, String weightfactor){
         this.id = id;
@@ -19,7 +19,7 @@ public class Toy {
         }
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -33,10 +33,8 @@ public class Toy {
 
     @Override
     public String toString() {
-        return "{" +
-                " id=" + id +
+        return "{id=" + id +
                 ", name='" + name + '\'' +
-                ", count=" + count +
                 ", weightfactor=" + weightfactor +
                 '}';
     }

@@ -1,10 +1,15 @@
 package org.example;
 
 public class Connector {
-    View view;
-    Model model;
+    private View view;
+    private Model model;
 
-    public put(){
-        model.writeAToy(view.put());
+    Connector(View view, Model model){
+        this.view = view;
+        this.model = model;
     }
+    public void put(){
+        model.putInStorage(model.writeAToy(view.put()));
+    }
+
 }

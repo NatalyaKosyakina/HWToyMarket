@@ -8,7 +8,11 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             run.put();
         }
-        run.get();
+        for (int i = 0; i < 10; i++) {
+            run.showAll();
+            run.get();
+        }
+
 //        run.save();
 
 

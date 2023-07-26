@@ -2,23 +2,40 @@ package org.example;
 
 import java.util.Iterator;
 
-public class Toy implements Comparable<Toy>, Iterator<String> {
+public class Toy implements Comparable<Toy> {
     private String id;
     private String name;
-    private int index;
     private int weightfactor = 1;
 
-    Toy(String id, String name, String weightfactor){
+    private int count = 0;
+    private int chance;
+
+
+    Toy(String id, String name, String count, String weightfactor){
         this.id = id;
         this.name = name;
-        setWeightfactor(weightfactor);
+        setCount(Integer.parseInt(count));
+        setWeightfactor(Integer.parseInt(weightfactor));
     }
 
-    public void setWeightfactor(String weightfactor) {
-       int number = Integer.parseInt(weightfactor);
-        if (number > 0 && number < 100){
-            this.weightfactor = number;
+    public void setWeightfactor(int weightfactor) {
+        if (weightfactor > 0 && weightfactor < 100){
+            this.weightfactor = weightfactor;
         }
+    }
+
+    public void setCount(int count) {
+        if (count > 0){
+            this.count = count;
+        }
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setChance(int chance) {
+        this.chance = chance ;
     }
 
     public String getId() {
@@ -35,17 +52,18 @@ public class Toy implements Comparable<Toy>, Iterator<String> {
 
     @Override
     public String toString() {
-        return "{id=" + id +
-                ", name='" + name + '\'' +
-                ", weightfactor=" + weightfactor +
-                '}';
+        return "{" + id +
+                " " + name +
+                ", вес " + weightfactor +
+                " " +  count +
+                " шт}";
     }
 
     @Override
     public int compareTo(Toy o) {
-        if (o.weightfactor < weightfactor){
+        if (o.chance < chance){
             return 1;
-        } else if (o.weightfactor == weightfactor) {
+        } else if (o.chance == chance) {
             return 0;
         }
         else {
@@ -53,20 +71,4 @@ public class Toy implements Comparable<Toy>, Iterator<String> {
         }
     }
 
-    @Override
-    public boolean hasNext() {
-        return index++ < 3;
-    }
-
-    @Override
-    public String next() {
-        switch (index){
-            case 1:
-                return id;
-            case 2:
-                return name;
-            default:
-                return "" + weightfactor;
-        }
-    }
 }

@@ -7,7 +7,7 @@ public class ConsoleView implements View{
     @Override
     public String put() {
         in = new Scanner(System.in);
-        System.out.println("Укажите id игрушки, её название и возможность её выпадения в розыгрыше(%)");
+        System.out.println("Укажите через пробел: id игрушки, её название, количество и вес(в %)");
         return in.nextLine();
     }
 
@@ -17,7 +17,7 @@ public class ConsoleView implements View{
     }
 
     @Override
-    public void show(Toy toy) {
+    public void show(String toy) {
         System.out.println(toy);
     }
 

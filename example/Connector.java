@@ -13,6 +13,9 @@ public class Connector {
     }
 
     public void get(){
-        view.show(model.getRandom());
+        view.show(model.getRandom().toString());
+    }
+    public void showAll(){
+        view.show(String.format("В розыгрыше участвуют: ", model.toys.toString()));
     }
 }

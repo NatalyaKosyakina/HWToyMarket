@@ -1,9 +1,11 @@
 package org.example;
 
-public class Toy {
+import java.util.Iterator;
+
+public class Toy implements Comparable<Toy>, Iterator<String> {
     private String id;
     private String name;
-
+    private int index;
     private int weightfactor = 1;
 
     Toy(String id, String name, String weightfactor){
@@ -37,5 +39,34 @@ public class Toy {
                 ", name='" + name + '\'' +
                 ", weightfactor=" + weightfactor +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Toy o) {
+        if (o.weightfactor < weightfactor){
+            return 1;
+        } else if (o.weightfactor == weightfactor) {
+            return 0;
+        }
+        else {
+            return -1;
+        }
+    }
+
+    @Override
+    public boolean hasNext() {
+        return index++ < 3;
+    }
+
+    @Override
+    public String next() {
+        switch (index){
+            case 1:
+                return id;
+            case 2:
+                return name;
+            default:
+                return "" + weightfactor;
+        }
     }
 }

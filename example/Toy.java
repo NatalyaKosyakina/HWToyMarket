@@ -7,14 +7,13 @@ public class Toy implements Comparable<Toy> {
     private String name;
     private int weightfactor = 1;
 
-    private int count = 0;
     private int chance;
 
 
-    Toy(String id, String name, String count, String weightfactor){
+    Toy(String id, String name, String weightfactor){
         this.id = id;
         this.name = name;
-        setCount(Integer.parseInt(count));
+//        setCount(Integer.parseInt(count));
         setWeightfactor(Integer.parseInt(weightfactor));
     }
 
@@ -24,15 +23,15 @@ public class Toy implements Comparable<Toy> {
         }
     }
 
-    public void setCount(int count) {
-        if (count > 0){
-            this.count = count;
-        }
-    }
-
-    public int getCount() {
-        return count;
-    }
+//    public void setCount(int count) {
+//        if (count > 0){
+//            this.count = count;
+//        }
+//    }
+//
+//    public int getCount() {
+//        return count;
+//    }
 
     public void setChance(int chance) {
         this.chance = chance ;
@@ -52,12 +51,16 @@ public class Toy implements Comparable<Toy> {
 
     @Override
     public String toString() {
-        return "{" + id +
-                " " + name +
-                ", вес " + weightfactor +
-                " " +  count +
-                " шт}";
+        return "ID " + id +
+                ", название " + name +
+                ", вес " + weightfactor;
     }
+
+
+//    @Override
+//    public String toString() {
+//        return "" + name;
+//    }
 
     @Override
     public int compareTo(Toy o) {

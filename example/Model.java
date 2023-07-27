@@ -1,75 +1,41 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.HashMap;
 
 public class Model {
-   // ArrayList<Toy> toys;
-    PriorityQueue<Toy> toys;
+    HashMap<Toy, Integer> toys;
 
     Model(){
-        this.toys = new PriorityQueue<>();
+        this.toys = new HashMap<>();
     }
-    public Toy writeAToy(String userinput){
+
+    public void putInStorage(String userinput){
         String[] parts = userinput.split(" ");
-        return new Toy(parts[0], parts[1], parts[2], parts[3]);
+        Toy toy = new Toy(parts[0], parts[1], parts[3]);
+        toys.put(toy, Integer.parseInt(parts[2]));
     }
 
-
-    public void putInStorage(Toy toy){
-        toys.add(toy);
-    }
-
-
-    public String[] allID(){
-        String[] ids = new String[toys.size()];
-        int i = 0;
-        for (Toy toy: toys) {
-            ids[i] = toy.getId();
-            i++;
-        }
-        return ids;
-    }
-
-    public String[] allNames(){
-        String[] names = new String[toys.size()];
-        int i = 0;
-        for (Toy toy: toys) {
-            names[i] = toy.getId();
-            i++;
-        }
-        return names;
-    }
-
-    public String[] allWeightfactors(){
-        String[] weightfactors = new String[toys.size()];
-        int i = 0;
-        for (Toy toy: toys) {
-            weightfactors[i] = toy.getId();
-            i++;
-        }
-        return weightfactors;
-    }
-
-    /*
-    Нужно сделать отдельный список, в котором будут храниться игрушки, и из которого они будут извлекаться.
-    Хранить count в объекте Игрушка - а как её выдавать при выигрыше?
-     */
     public Toy getRandom(){
-        Random random = new Random();
-        for (Toy toy: toys) {
-            toy.setChance(toy.getWeightfactor() * random.nextInt());
+        Lottery round = new Lottery();
+        Toy prize = round.get(toys);
+        int count = toys.get(prize);
+        if (count > 1){
+            toys.put(prize, count - 1);
         }
-        Toy result = toys.peek();
-        if (result.getCount() < 1){
-            toys.poll();
+        else {
+            toys.remove(prize);
         }
-        result.setCount(result.getCount() - 1);
-        return result;
+        return prize;
     }
 
-    public void setCount(Toy toy, int count) {
-        toy.setCount(count);
+    public HashMap<Toy, Integer> getToys(){
+        return toys;
+    }
+//    public boolean empty(){
+//        return toys == null;
+//    }
+
+    public int allcount(){
+        return toys.size();
     }
 }

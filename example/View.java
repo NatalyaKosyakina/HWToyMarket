@@ -5,7 +5,5 @@ import java.util.Scanner;
 public interface View {
     public String put();
 
-    public void get();
-
     public void show(String toy);
 }

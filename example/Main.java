@@ -8,13 +8,14 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             run.put();
         }
-
-        for (int i = 0; i < 3; i++) {
-            run.showAll();
-//            run.get();
+        StringBuilder temp = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            temp.append(run.get());
+            temp.append("\n");
         }
+        run.save(temp.toString());
 
-        run.save();
+ //
 
 
 

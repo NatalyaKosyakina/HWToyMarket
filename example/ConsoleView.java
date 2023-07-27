@@ -12,17 +12,8 @@ public class ConsoleView implements View{
     }
 
     @Override
-    public void get() {
-
-    }
-
-    @Override
     public void show(String toy) {
         System.out.println(toy);
     }
 
-//    @Override
-//    public void selectDoing() {
-//        System.out.println("Выберите действие: \n 1 Ввод данных игрушек по одной и их выбор из коробки наугад \n 2 Ввод данных игрушек ");
-//    }
 }

@@ -11,11 +11,14 @@ public class Connector {
     public void put(){
         model.putInStorage(model.writeAToy(view.put()));
     }
+    public void save(){
 
+    }
     public void get(){
-        view.show(model.getRandom().toString());
+        String res = model.getRandom().toString();
+        view.show(res);
     }
     public void showAll(){
-        view.show(String.format("В розыгрыше участвуют: ", model.toys.toString()));
+        view.show(model.toys.toString());
     }
 }

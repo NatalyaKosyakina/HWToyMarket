@@ -62,12 +62,12 @@ public class Toy implements Comparable<Toy> {
     @Override
     public int compareTo(Toy o) {
         if (o.chance < chance){
-            return 1;
+            return -1;
         } else if (o.chance == chance) {
             return 0;
         }
         else {
-            return -1;
+            return 1;
         }
     }
 

@@ -1,17 +1,12 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Random;
 
 public class Model {
+   // ArrayList<Toy> toys;
     PriorityQueue<Toy> toys;
-    /*
-    Здесь должна быть функция:
-     принимающая строку,
-     разбивающая её на детали,
-     создающая из этих деталей экземпляр класса Toy,
-     и добавляющая этот экземпляр в класс ToyStorage
-     */
 
     Model(){
         this.toys = new PriorityQueue<>();
@@ -57,6 +52,10 @@ public class Model {
         return weightfactors;
     }
 
+    /*
+    Нужно сделать отдельный список, в котором будут храниться игрушки, и из которого они будут извлекаться.
+    Хранить count в объекте Игрушка - а как её выдавать при выигрыше?
+     */
     public Toy getRandom(){
         Random random = new Random();
         for (Toy toy: toys) {

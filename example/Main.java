@@ -8,12 +8,13 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             run.put();
         }
-        for (int i = 0; i < 10; i++) {
+
+        for (int i = 0; i < 3; i++) {
             run.showAll();
-            run.get();
+//            run.get();
         }
 
-//        run.save();
+        run.save();
 
 
 

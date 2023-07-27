@@ -20,17 +20,4 @@ public class Lottery {
         Toy toy = toys.poll();
         return toy;
     }
-//    public Toy get(){
-
-//        Toy result = toys.peek();
-//        if (result.getCount() < 1){
-//            toys.poll();
-//        }
-//        result.setCount(result.getCount() - 1);
-//        return result;
-//    }
-
-//    public void setCount(Toy toy, int count) {
-//        toy.setCount(count);
-//    }
 }

@@ -33,4 +33,8 @@ public class Connector {
             filework.saveToFile("Example", text);
         } catch (IOException e) {}
     }
+
+    public void load(){
+        view.show(filework.load("Example"));
+    }
 }

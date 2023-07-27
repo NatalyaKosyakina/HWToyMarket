@@ -10,7 +10,6 @@ public class ConsoleView implements View{
         System.out.println("Укажите через пробел: id игрушки, её название, количество и вес(в %)");
         return in.nextLine();
     }
-
     @Override
     public void show(String toy) {
         System.out.println(toy);

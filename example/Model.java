@@ -31,9 +31,6 @@ public class Model {
     public HashMap<Toy, Integer> getToys(){
         return toys;
     }
-//    public boolean empty(){
-//        return toys == null;
-//    }
 
     public int allcount(){
         return toys.size();

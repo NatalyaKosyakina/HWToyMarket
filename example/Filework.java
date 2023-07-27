@@ -1,10 +1,9 @@
 package org.example;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Filework {
-    private String path_to_folder = "/forfiles/";
+    private String path_to_folder = "";
     private String format = ".txt";
 
     public String findpath(String filename){
@@ -18,9 +17,28 @@ public class Filework {
         } catch (IOException e) {
             System.out.println("Не удалось записать данные в файл");
         }
-
     }
-    //        File file = new File(path);
+
+    public String load(String filename){
+        StringBuilder text = new StringBuilder();
+        try {
+            File file = new File(findpath(filename));
+            FileReader fr = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fr);
+            String tmp = reader.readLine();
+            while(tmp != null){
+                tmp = reader.readLine();
+                text.append(tmp);
+                text.append("\n");
+            }
+            reader.close();
+            fr.close();
+        } catch (IOException e) {
+            System.out.println("Не удалось прочитать файл");
+        }
+        return text.toString();
+    }
+
     public void setFormat(String format) {
         this.format = format;
     }

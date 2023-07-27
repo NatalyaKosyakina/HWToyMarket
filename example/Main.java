@@ -15,15 +15,6 @@ public class Main {
         }
         run.save(temp.toString());
 
- //
-
-
-
-
-//        ArrayList<Toy> toys = new ArrayList<>();
-//        for (int i = 0; i < 6; i++) {
-//            toys.add(ToyBuilder.generateToy());
-//        }
-//        System.out.println(toys);
+        run.load();
     }
 }
